@@ -8,6 +8,7 @@ In your repository, add your configuration in `.github/assignee-lottery.yml`
 ```yaml
 assignees:
   - silentsilas
+  - github_user
   - some_other_github_user
 ```
 
