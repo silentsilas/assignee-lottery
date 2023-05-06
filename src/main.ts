@@ -11,16 +11,14 @@ async function run(): Promise<void> {
 		const assignees = getAssigneesFromConfig();
 
 		if (assignees.length === 0) {
-			core.setFailed('No assignees provided');
-			return;
+			throw new Error('No assignees provided');
 		}
 
 		const client = github.getOctokit(token);
 		const {repo, payload} = github.context;
 
 		if (!payload.pull_request) {
-			core.setFailed('This action should only run on pull_request events');
-			return;
+			throw new Error('This action should only run on pull_request events');
 		}
 
 		const prNumber = payload.pull_request.number;
