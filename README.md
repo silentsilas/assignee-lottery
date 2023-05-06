@@ -9,6 +9,7 @@ In your repository, add your configuration in `.github/assignee-lottery.yml`
 assignees:
   - silentsilas
   - some_other_github_user
+  - another_github_user
 ```
 
 Now when a pull request is opened in your repository, a random user from that list will be set as an assignee, choosing the user assigned to the least amount of PR's that are already open.
