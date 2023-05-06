@@ -1,7 +1,7 @@
 # assignee-lottery
 Github Action to randomly assign an assignee to a pull request
 
-This was heavily inspired by [reviewer-lottery](https://github.com/uesteibar/reviewer-lottery). However, it assigns reviewers instead of assignees which don't appear link properly with Jira, and its added complexity to support features that may not be needed made it difficult to extend it.
+This was heavily inspired by [reviewer-lottery](https://github.com/uesteibar/reviewer-lottery). However, it assigns reviewers instead of assignees which don't appear to link properly with Jira, and its added complexity to support features that may not be needed made it difficult to extend it.
 
 In your repository, add your configuration in `.github/assignee-lottery.yml`
 
