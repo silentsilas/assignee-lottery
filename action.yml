@@ -2,7 +2,7 @@ name: "Assignee lottery"
 description: "Automatically assign assignee to Pull Requests"
 author: "silentsilas"
 branding:
-  icon: "eye"
+  icon: "award"
   color: "orange"
 inputs:
   repo-token:
