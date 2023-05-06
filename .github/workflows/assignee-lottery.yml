@@ -1,0 +1,13 @@
+name: 'Assignee lottery'
+on:
+  pull_request_target:
+    types: [opened, ready_for_review, reopened]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - uses: silentsilas/assignee-lottery@v1.0.0
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
