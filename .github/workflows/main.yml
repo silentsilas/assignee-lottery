@@ -1,0 +1,15 @@
+name: Assign random assignee
+
+on:
+  pull_request:
+    types:
+      - opened
+
+jobs:
+  assign_random_reviewer:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Setup Node.js
+        uses: actions/setup
