@@ -22,6 +22,7 @@ async function run(): Promise<void> {
 		}
 
 		const prNumber = payload.pull_request.number;
+		const author = payload.pull_request.user.login as string;
 
 		// Fetch all open pull requests
 		const {data: openPRs} = await client.rest.pulls.list({
@@ -33,6 +34,7 @@ async function run(): Promise<void> {
 		// Count the number of assigned pull requests for each user
 		const assigneeCounts: {[assignee: string]: number} = {};
 		for (const assignee of assignees) {
+			if (assignee === author) continue;
 			assigneeCounts[assignee] = 0;
 		}
 
@@ -46,6 +48,8 @@ async function run(): Promise<void> {
 				}
 			}
 		}
+
+		if (Object.values(assigneeCounts).length <= 0) throw new Error("No assignees available");
 
 		// Find the least assigned count
 		const leastAssignedCount = Math.min(...Object.values(assigneeCounts));
