@@ -8,6 +8,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - uses: silentsilas/assignee-lottery@v1.0.1
+      - uses: silentsilas/assignee-lottery@v1.0.3
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
